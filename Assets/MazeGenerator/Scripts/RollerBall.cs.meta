@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: 48a3aea66c80209468a4c613fe0c6ccb
-timeCreated: 1431541255
-licenseType: Store
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Wall: {fileID: 144206, guid: 9de82ec743bb24449a99f5cf1e325d61, type: 3}
+  - ViewCamera: {instanceID: 0}
+  - JumpSound: {instanceID: 0}
+  - HitSound: {instanceID: 0}
+  - CoinSound: {instanceID: 0}
+  - GlitchSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

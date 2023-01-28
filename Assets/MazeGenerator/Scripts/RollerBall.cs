@@ -6,6 +6,7 @@ using System.Collections;
 //</summary>
 public class RollerBall : MonoBehaviour {
 
+	public GameObject Wall = null;
 	public GameObject ViewCamera = null;
 	public AudioClip JumpSound = null;
 	public AudioClip HitSound = null;
@@ -13,6 +14,7 @@ public class RollerBall : MonoBehaviour {
 	public AudioClip GlitchSound = null;
 
 	public int BoostWhenTransformingAmount = 4;
+	public int HeightBoostAmount = 2;
 	
 	private Rigidbody mRigidBody = null;
 	private AudioSource mAudioSource = null;
@@ -49,7 +51,7 @@ public class RollerBall : MonoBehaviour {
 		}
 	}
 
-	void GlitchWall()
+	void GlitchWall(GameObject oldWall)
 	{
 		var glitchWalls = GameObject.FindGameObjectsWithTag("GlitchWall");
 		var wall = glitchWalls[Random.Range(0, glitchWalls.Length)];
@@ -68,7 +70,21 @@ public class RollerBall : MonoBehaviour {
 		{
 			wallLocation.z += BoostWhenTransformingAmount;
 		}
+
+		//Boost the ball up incase it falls underground
+		wallLocation.y += HeightBoostAmount;
 		
+		//Replace the wall that was touched
+		var test = Instantiate(Wall, oldWall.transform.position, oldWall.transform.rotation) as GameObject;
+		test.transform.parent = oldWall.transform.parent;
+		Destroy(oldWall as GameObject);
+		
+		//and replace the wall that the ball is teleported too
+
+		var repWall = Instantiate(Wall, wall.transform.position, wall.transform.rotation) as GameObject;
+		repWall.transform.parent = wall.transform.parent;
+		Destroy(wall as GameObject);
+
 		
 		mRigidBody.position = wallLocation;
 		Debug.Log("I have glitched");
@@ -79,7 +95,7 @@ public class RollerBall : MonoBehaviour {
 		if (coll.gameObject.tag.Equals("GlitchWall"))
 		{
 			mAudioSource.PlayOneShot(GlitchSound);
-			GlitchWall();
+			GlitchWall(coll.gameObject);
 		}
 		
 		if (coll.gameObject.tag.Equals ("Floor")) {
@@ -110,3 +126,4 @@ public class RollerBall : MonoBehaviour {
 		}
 	}
 }
+	
