@@ -77,7 +77,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5479d13a608f99e4baf825fbea6b589a, type: 2}
+  - {fileID: 2100000, guid: 20e17aac92cea844aaa708706067eb14, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -131,3 +131,5 @@ MonoBehaviour:
   JumpSound: {fileID: 0}
   HitSound: {fileID: 0}
   CoinSound: {fileID: 0}
+  GlitchSound: {fileID: 0}
+  BoostWhenTransformingAmount: 4

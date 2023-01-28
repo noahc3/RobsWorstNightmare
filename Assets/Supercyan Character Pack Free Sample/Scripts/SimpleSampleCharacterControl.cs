@@ -24,6 +24,17 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     [SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
 
+    
+    
+    public GameObject ViewCamera = null;
+    public AudioClip JumpSound = null;
+    public AudioClip HitSound = null;
+    public AudioClip CoinSound = null;
+    public AudioClip GlitchSound = null;
+
+    public int BoostWhenTransformingAmount = 4;
+    private AudioSource mAudioSource = null;
+    
     private float m_currentV = 0;
     private float m_currentH = 0;
 
@@ -43,6 +54,11 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     private List<Collider> m_collisions = new List<Collider>();
 
+    void Start()
+    {
+        mAudioSource = GetComponent<AudioSource> ();
+    }
+    
     private void Awake()
     {
         if (!m_animator) { gameObject.GetComponent<Animator>(); }

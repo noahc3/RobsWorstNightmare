@@ -6,6 +6,7 @@ using System.Collections;
 //</summary>
 public class RollerBall : MonoBehaviour {
 
+	public GameObject Wall = null;
 	public GameObject ViewCamera = null;
 	public AudioClip JumpSound = null;
 	public AudioClip HitSound = null;
@@ -69,6 +70,12 @@ public class RollerBall : MonoBehaviour {
 			wallLocation.z += BoostWhenTransformingAmount;
 		}
 		
+		var test = Instantiate(Wall, wall.transform.position, wall.transform.rotation) as GameObject;
+		Debug.Log($"I have created {test.transform.position}");
+		
+		Destroy(wall);
+		Debug.Log($"I have destroyed {wall.transform.position}");
+
 		
 		mRigidBody.position = wallLocation;
 		Debug.Log("I have glitched");

@@ -55,7 +55,7 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 				if(ctv.Column+1 < ColumnCount){
 					GetMazeCell(ctv.Row,ctv.Column+1).WallLeft = true;
 					
-					GetMazeCell(ctv.Row, ctv.Column + 1).IsGlitch = mCellsToVisit.Count / 2 > 1;
+					GetMazeCell(ctv.Row, ctv.Column + 1).IsGlitch = mCellsToVisit.Count / 3 > 1;
 				}
 			}
 			//check move forward
@@ -67,7 +67,7 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 				if(ctv.Row+1 < RowCount){
 					GetMazeCell(ctv.Row+1,ctv.Column).WallBack = true;
 					
-					GetMazeCell(ctv.Row+1, ctv.Column).IsGlitch = mCellsToVisit.Count / 2 > 1;
+					GetMazeCell(ctv.Row+1, ctv.Column).IsGlitch = mCellsToVisit.Count / 3 > 1;
 				}
 			}
 			//check move left
@@ -79,7 +79,7 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 				if(ctv.Column > 0 && ctv.Column-1 >= 0){
 					GetMazeCell(ctv.Row,ctv.Column-1).WallRight = true;
 					
-					GetMazeCell(ctv.Row, ctv.Column - 1).IsGlitch = mCellsToVisit.Count / 2 > 1;
+					GetMazeCell(ctv.Row, ctv.Column - 1).IsGlitch = mCellsToVisit.Count / 3 > 1;
 				}
 			}
 			//check move backward
@@ -91,7 +91,7 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 				if(ctv.Row > 0 && ctv.Row-1 >= 0){
 					GetMazeCell(ctv.Row-1,ctv.Column).WallFront = true;
 					
-					GetMazeCell(ctv.Row-1, ctv.Column).IsGlitch = mCellsToVisit.Count / 2 > 1;
+					GetMazeCell(ctv.Row-1, ctv.Column).IsGlitch = mCellsToVisit.Count / 3 > 1;
 				}
 			}
 
