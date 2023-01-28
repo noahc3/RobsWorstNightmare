@@ -9,23 +9,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1090778367598946, guid: ef7b06e3b2d77d74f84296706b12ee0b, type: 3}
       propertyPath: m_Name
-      value: Espresso
+      value: EspressoCollectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090778367598946, guid: ef7b06e3b2d77d74f84296706b12ee0b, type: 3}
+      propertyPath: m_TagString
+      value: EspressoCollectable
       objectReference: {fileID: 0}
     - target: {fileID: 4077614634029320, guid: ef7b06e3b2d77d74f84296706b12ee0b, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4077614634029320, guid: ef7b06e3b2d77d74f84296706b12ee0b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077614634029320, guid: ef7b06e3b2d77d74f84296706b12ee0b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077614634029320, guid: ef7b06e3b2d77d74f84296706b12ee0b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077614634029320, guid: ef7b06e3b2d77d74f84296706b12ee0b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.27272743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4077614634029320, guid: ef7b06e3b2d77d74f84296706b12ee0b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.78912014
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4077614634029320, guid: ef7b06e3b2d77d74f84296706b12ee0b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00075593527
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4077614634029320, guid: ef7b06e3b2d77d74f84296706b12ee0b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62,6 +78,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1090778367598946, guid: ef7b06e3b2d77d74f84296706b12ee0b, type: 3}
   m_PrefabInstance: {fileID: 5734471110010588305}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &8712730613986152379
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5735069251330043379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09, y: 0.1, z: 0.09}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!114 &1667892198
 MonoBehaviour:
   m_ObjectHideFlags: 0
