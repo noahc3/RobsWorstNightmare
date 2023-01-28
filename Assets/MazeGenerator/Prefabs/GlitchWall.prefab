@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2381534}
   - component: {fileID: 6436642}
   m_Layer: 0
-  m_Name: GlitchWallPrefab
-  m_TagString: Untagged
+  m_Name: GlitchWall
+  m_TagString: GlitchWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

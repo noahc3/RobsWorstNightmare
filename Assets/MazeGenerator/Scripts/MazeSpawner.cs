@@ -64,31 +64,61 @@ public class MazeSpawner : MonoBehaviour {
 				
 				if(cell.WallRight){
 
+					if (cell.IsGlitch)
+					{
+						tmp = Instantiate(GlitchWall, new Vector3(x + CellWidth / 2, 0, z) + Wall.transform.position,
+							Quaternion.Euler(0, 90, 0)) as GameObject; // right
+					}
+					else
+					{
 						tmp = Instantiate(Wall, new Vector3(x + CellWidth / 2, 0, z) + Wall.transform.position,
 							Quaternion.Euler(0, 90, 0)) as GameObject; // right
+					}
 
 					tmp.transform.parent = transform;
 				}
 				if(cell.WallFront){
-					
+
+					if (cell.IsGlitch)
+					{
+						tmp = Instantiate(GlitchWall, new Vector3(x, 0, z + CellHeight / 2) + Wall.transform.position,
+							Quaternion.Euler(0, 0, 0)) as GameObject; // front
+					}
+					else
+					{
 						tmp = Instantiate(Wall, new Vector3(x, 0, z + CellHeight / 2) + Wall.transform.position,
 							Quaternion.Euler(0, 0, 0)) as GameObject; // front
-						tmp.transform.parent = transform;
-				}
-				
-				if(cell.WallLeft){
+					}
 
+					tmp.transform.parent = transform;
+				}
+				if(cell.WallLeft){
+					if (cell.IsGlitch)
+					{
+						tmp = Instantiate(GlitchWall, new Vector3(x - CellWidth / 2, 0, z) + Wall.transform.position,
+							Quaternion.Euler(0, 270, 0)) as GameObject; // left
+					}
+					else
+					{
 						tmp = Instantiate(Wall, new Vector3(x - CellWidth / 2, 0, z) + Wall.transform.position,
 							Quaternion.Euler(0, 270, 0)) as GameObject; // left
+					}
 					tmp.transform.parent = transform;
 				}
 				
 				if(cell.WallBack){
+					if (cell.IsGlitch)
+					{
+						tmp = Instantiate(GlitchWall, new Vector3(x, 0, z - CellHeight / 2) + Wall.transform.position,
+							Quaternion.Euler(0, 180, 0)) as GameObject; // back
+					}
+					else
+					{
 						tmp = Instantiate(Wall, new Vector3(x, 0, z - CellHeight / 2) + Wall.transform.position,
 							Quaternion.Euler(0, 180, 0)) as GameObject; // back
+					}
 					tmp.transform.parent = transform;
 				}
-				
 				
 				if(cell.IsGoal && GoalPrefab != null){
 					tmp = Instantiate(GoalPrefab, new Vector3(x, 1, z), Quaternion.Euler(0, 0, 0)) as GameObject;

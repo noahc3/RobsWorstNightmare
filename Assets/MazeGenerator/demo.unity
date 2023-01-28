@@ -400,9 +400,17 @@ PrefabInstance:
       propertyPath: ViewCamera
       value: 
       objectReference: {fileID: 1346720322}
+    - target: {fileID: 11471494, guid: 6414ea9cfa2ccc24a95c775ffa926968, type: 3}
+      propertyPath: GlitchSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 588103d53f420764aba87ecaab7aaae2, type: 3}
+    - target: {fileID: 11471494, guid: 6414ea9cfa2ccc24a95c775ffa926968, type: 3}
+      propertyPath: BoostWhenTransformingAmount
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 13582488, guid: 6414ea9cfa2ccc24a95c775ffa926968, type: 3}
       propertyPath: m_Radius
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6414ea9cfa2ccc24a95c775ffa926968, type: 3}
@@ -497,6 +505,7 @@ MonoBehaviour:
   RandomSeed: 3
   Floor: {fileID: 165842, guid: 8d3b36f175a633f429d7bda54c76550d, type: 3}
   Wall: {fileID: 144206, guid: 9de82ec743bb24449a99f5cf1e325d61, type: 3}
+  GlitchWall: {fileID: 144206, guid: b1437c8f4256bb043856b6eb583df4a8, type: 3}
   Pillar: {fileID: 142476, guid: f3f97a2401feba4479a301d6181e9da6, type: 3}
   Rows: 10
   Columns: 10
