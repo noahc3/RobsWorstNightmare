@@ -33,6 +33,27 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 
 	}
 
+	private readonly int _MaxNumberOfGlitches = 26;
+
+	private static int _CurrentNumberOfGlitches = 0;
+	
+	private bool ShouldGlitch(int row, int col)
+	{
+		
+		
+		Debug.Log($"Current number of Glitches: {_CurrentNumberOfGlitches}");
+		if ((_CurrentNumberOfGlitches / (col+row+1) < _MaxNumberOfGlitches  ))
+		{
+			_CurrentNumberOfGlitches++;
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
+	}
+
 	public override void GenerateMaze ()
 	{
 		Direction[] movesAvailable = new Direction[4];
@@ -42,6 +63,8 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 		while (mCellsToVisit.Count > 0) {
 			movesAvailableCount = 0;
 			CellToVisit ctv = mCellsToVisit[GetCellInRange(mCellsToVisit.Count-1)];
+			
+			bool isGlitch =  ShouldGlitch(ctv.Row,ctv.Column);
 			
 			//determine if glitch
 			//TODO make this work better A really simplenway of adding glitched walls.
@@ -54,8 +77,8 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 				GetMazeCell(ctv.Row,ctv.Column).WallRight = true;
 				if(ctv.Column+1 < ColumnCount){
 					GetMazeCell(ctv.Row,ctv.Column+1).WallLeft = true;
-					
-					GetMazeCell(ctv.Row, ctv.Column + 1).IsGlitch = mCellsToVisit.Count / 2 > 1;
+
+					GetMazeCell(ctv.Row, ctv.Column + 1).IsGlitch = isGlitch;
 				}
 			}
 			//check move forward
@@ -67,7 +90,7 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 				if(ctv.Row+1 < RowCount){
 					GetMazeCell(ctv.Row+1,ctv.Column).WallBack = true;
 					
-					GetMazeCell(ctv.Row+1, ctv.Column).IsGlitch = mCellsToVisit.Count / 2 > 1;
+					GetMazeCell(ctv.Row+1, ctv.Column).IsGlitch =  isGlitch;
 				}
 			}
 			//check move left
@@ -79,7 +102,7 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 				if(ctv.Column > 0 && ctv.Column-1 >= 0){
 					GetMazeCell(ctv.Row,ctv.Column-1).WallRight = true;
 					
-					GetMazeCell(ctv.Row, ctv.Column - 1).IsGlitch = mCellsToVisit.Count / 2 > 1;
+					GetMazeCell(ctv.Row, ctv.Column - 1).IsGlitch =  isGlitch;
 				}
 			}
 			//check move backward
@@ -91,7 +114,7 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 				if(ctv.Row > 0 && ctv.Row-1 >= 0){
 					GetMazeCell(ctv.Row-1,ctv.Column).WallFront = true;
 					
-					GetMazeCell(ctv.Row-1, ctv.Column).IsGlitch = mCellsToVisit.Count / 2 > 1;
+					GetMazeCell(ctv.Row-1, ctv.Column).IsGlitch =  isGlitch;
 				}
 			}
 
