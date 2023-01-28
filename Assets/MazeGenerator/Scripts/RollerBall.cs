@@ -102,7 +102,7 @@ public class RollerBall : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.tag.Equals ("Coin")) {
+		if (other.gameObject.tag.Equals ("EspressoCollectable")) {
 			if(mAudioSource != null && CoinSound != null){
 				mAudioSource.PlayOneShot(CoinSound);
 			}
