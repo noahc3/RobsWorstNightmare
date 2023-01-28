@@ -381,6 +381,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11471494, guid: 6414ea9cfa2ccc24a95c775ffa926968, type: 3}
+      propertyPath: Wall
+      value: 
+      objectReference: {fileID: 144206, guid: 9de82ec743bb24449a99f5cf1e325d61, type: 3}
+    - target: {fileID: 11471494, guid: 6414ea9cfa2ccc24a95c775ffa926968, type: 3}
       propertyPath: HitSound
       value: 
       objectReference: {fileID: 8300000, guid: a5548be9a9e5a6d43adb6e184f7b96bb, type: 3}
