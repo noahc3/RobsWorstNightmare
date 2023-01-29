@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MazeGenerator/demo.unity
     guid: 5f66713930f36f84a865122d99889d76
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 61c4dd0b6cea059499d6c395b89a25dd
   m_configObjects: {}

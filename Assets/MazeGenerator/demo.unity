@@ -218,6 +218,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EspressosOverlay
       objectReference: {fileID: 0}
+    - target: {fileID: 3999260484909961960, guid: 477b81a1dae4b8d489af38c02773aa0e, type: 3}
+      propertyPath: m_Name
+      value: espresso1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317033976193257987, guid: 477b81a1dae4b8d489af38c02773aa0e, type: 3}
+      propertyPath: m_Name
+      value: espresso3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 477b81a1dae4b8d489af38c02773aa0e, type: 3}
 --- !u!1 &592782807

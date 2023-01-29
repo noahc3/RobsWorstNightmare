@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Rob : MonoBehaviour
 {
@@ -21,7 +23,6 @@ public class Rob : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -109,8 +110,28 @@ public class Rob : MonoBehaviour
             }
 
             espressosCollected++;
-            if (espressosCollected == 3)
+            if (espressosCollected == 1)
             {
+                Image espresso1 =  GameObject.Find("espresso1").GetComponent<Image>();
+                var tempColor = espresso1.color;
+                tempColor.a = 1f;
+                espresso1.color = tempColor;
+            }
+            else if (espressosCollected == 2)
+            {
+                Image espresso1 =  GameObject.Find("espresso2").GetComponent<Image>();
+                var tempColor = espresso1.color;
+                tempColor.a = 1f;
+                espresso1.color = tempColor;
+            }
+            else // 3
+            {
+                Image espresso1 =  GameObject.Find("espresso3").GetComponent<Image>();
+                var tempColor = espresso1.color;
+                tempColor.a = 1f;
+                espresso1.color = tempColor;
+
+                SceneManager.LoadScene(3);
 
             }
 
