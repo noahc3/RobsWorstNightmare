@@ -40,8 +40,6 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 	private bool ShouldGlitch(int row, int col)
 	{
 		
-		
-		Debug.Log($"Current number of Glitches: {_CurrentNumberOfGlitches}");
 		if ((_CurrentNumberOfGlitches / (col+row+1) < _MaxNumberOfGlitches  ))
 		{
 			_CurrentNumberOfGlitches++;
@@ -53,9 +51,15 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 		}
 
 	}
-
+	 
+	
+	
+	public int MAX_ENEMIES = 5;
+	
 	public override void GenerateMaze ()
 	{
+		int numEnemies = 0;
+		
 		Direction[] movesAvailable = new Direction[4];
 		int movesAvailableCount = 0;
 		mCellsToVisit.Add (new CellToVisit (Random.Range (0, RowCount), Random.Range (0, ColumnCount),Direction.Start));
@@ -63,8 +67,8 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 		while (mCellsToVisit.Count > 0) {
 			movesAvailableCount = 0;
 			CellToVisit ctv = mCellsToVisit[GetCellInRange(mCellsToVisit.Count-1)];
-			
-			bool isGlitch =  ShouldGlitch(ctv.Row,ctv.Column);
+
+			bool isGlitch = ShouldGlitch(ctv.Row, ctv.Column);
 			
 			//determine if glitch
 			//TODO make this work better A really simplenway of adding glitched walls.
@@ -144,6 +148,13 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 			}else{
 				mCellsToVisit.Remove(ctv);
 			}
+		}
+
+		for (; numEnemies < MAX_ENEMIES; numEnemies++)
+		{
+			int x = Random.Range(0,RowCount);
+			int y = Random.Range(1, ColumnCount);
+			GetMazeCell(x, y).IsSpawn = true;
 		}
 	}
 

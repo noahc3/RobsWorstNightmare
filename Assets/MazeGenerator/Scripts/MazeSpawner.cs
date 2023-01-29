@@ -18,6 +18,7 @@ public class MazeSpawner : MonoBehaviour {
 	public bool FullRandom = false;
 	public int RandomSeed = 2023;
 	public GameObject Floor = null;
+	public GameObject SpawnFloor = null;
 	public GameObject Wall = null;
 	public GameObject GlitchWall = null;
 	public GameObject Pillar = null;
@@ -62,7 +63,19 @@ public class MazeSpawner : MonoBehaviour {
 				float z = row*(CellHeight+(AddGaps?.2f:0));
 				MazeCell cell = mMazeGenerator.GetMazeCell(row,column);
 				GameObject tmp;
-				tmp = Instantiate(Floor,new Vector3(x,0,z), Quaternion.Euler(0,0,0)) as GameObject;
+
+				
+				if (cell.IsSpawn)
+				{
+					tmp = Instantiate(SpawnFloor,new Vector3(x,0,z), Quaternion.Euler(0,0,0)) as GameObject;
+					//Debug.Log("Spawn floor");
+				}
+				else
+				{
+					//Debug.Log("Normal Floor");
+					tmp = Instantiate(Floor,new Vector3(x,0,z), Quaternion.Euler(0,0,0)) as GameObject;
+				}
+				
 				tmp.transform.parent = transform;
 				
 				
