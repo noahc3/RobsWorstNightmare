@@ -17,5 +17,30 @@ public class EspressoSpin : MonoBehaviour
     {
         gameObject.transform.Rotate(Vector3.up, degPerSecond * Time.deltaTime * -1.0f * 2, Space.Self);
         gameObject.transform.Rotate(Vector3.up, degPerSecond * Time.deltaTime, Space.World);
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        RaycastHit hit;
+        if (Physics.Raycast(gameObject.transform.position, (player.transform.position - gameObject.transform.position).normalized, out hit, Mathf.Infinity)) {
+            GameObject hitObj = hit.transform.gameObject;
+            if (hitObj.tag == "Player")
+            {
+                SetVisibility(true);
+            }
+            else
+            {
+                SetVisibility(false);
+            }
+        } else
+        {
+            SetVisibility(true);
+        }
+    }
+
+    void SetVisibility(bool visible)
+    {
+        foreach (MeshRenderer renderer in gameObject.GetComponentsInChildren<MeshRenderer>())
+        {
+            renderer.enabled = visible;
+        }
     }
 }
