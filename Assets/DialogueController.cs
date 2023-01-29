@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 
 public class DialogueController : MonoBehaviour
 {
@@ -48,10 +48,13 @@ public class DialogueController : MonoBehaviour
 
     void NextSentence()
     {
-      if(SentenceIndex <= Sentences.Length - 1)
+      if(SentenceIndex < Sentences.Length - 1)
         {
           DialogueText.text = "";
           StartCoroutine(WriteSentence());
+        }else
+        {
+          SceneManager.LoadScene(2);
         }
     }
 
