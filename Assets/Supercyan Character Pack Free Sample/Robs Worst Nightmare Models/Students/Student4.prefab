@@ -1343,6 +1343,7 @@ GameObject:
   - component: {fileID: 1221030649215221295}
   - component: {fileID: 7622616018902980216}
   - component: {fileID: -6407586656505999909}
+  - component: {fileID: 2747518836176562247}
   m_Layer: 0
   m_Name: Student4
   m_TagString: Untagged
@@ -1407,7 +1408,7 @@ Animator:
   m_GameObject: {fileID: 1997953001238138}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 45d480461bbdc704587e117329ce8e69, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8b9a677f24793ba45bdc27a1dab7745e, type: 2}
+  m_Controller: {fileID: 9100000, guid: a4cf77dc477c78f4ca185996a164edc4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1424,7 +1425,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997953001238138}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba158ff05cf30224f94bfdddec8e7635, type: 3}
   m_Name: 
@@ -1550,3 +1551,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a2d53adcfa0bd8c4cb79584933e243ec, type: 3}
   - {fileID: 8300000, guid: 80b230e8cc35dff4bb9b4fa6ef279a33, type: 3}
   - {fileID: 8300000, guid: 10dbb4b39426f924599d06d29f874bdf, type: 3}
+--- !u!114 &2747518836176562247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997953001238138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8717af8a98aa4de44b6802248ce547ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  script: {fileID: 0}
+  canMove: 1
+  countMove: 0
+  m_EnemyPrefab: {fileID: 0}
