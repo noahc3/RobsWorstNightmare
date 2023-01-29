@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 //<summary>
 //Game object, that creates maze and instantiates it in scene
@@ -28,6 +29,9 @@ public class MazeSpawner : MonoBehaviour {
 	public GameObject GoalPrefab = null;
 
 	private BasicMazeGenerator mMazeGenerator = null;
+
+	private GameObject ActiveEspresso;
+	private List<Vector3> GoalPosList = new List<Vector3>();
 
 	void Start () {
 		if (!FullRandom) {
@@ -121,8 +125,7 @@ public class MazeSpawner : MonoBehaviour {
 				}
 				
 				if(cell.IsGoal && GoalPrefab != null){
-					tmp = Instantiate(GoalPrefab, new Vector3(x, 0.5f, z), Quaternion.Euler(0, 0, 0)) as GameObject;
-					tmp.transform.parent = transform;
+					GoalPosList.Add(new Vector3(x, 0.5f, z));
 				}
 			}
 		}
@@ -138,4 +141,18 @@ public class MazeSpawner : MonoBehaviour {
 			}
 		}
 	}
+
+	void Update()
+    {
+		if (ActiveEspresso == null)
+        {
+			int rng = Random.Range(0, GoalPosList.Count);
+			Vector3 nextPos = GoalPosList[rng];
+			GoalPosList.RemoveAt(rng);
+
+			Debug.Log($"Creating new espresso at ({nextPos.x}, {nextPos.z})");
+			ActiveEspresso = Instantiate(GoalPrefab, nextPos, Quaternion.Euler(0, 0, 0)) as GameObject;
+			ActiveEspresso.transform.parent = transform;
+		}
+    }
 }
