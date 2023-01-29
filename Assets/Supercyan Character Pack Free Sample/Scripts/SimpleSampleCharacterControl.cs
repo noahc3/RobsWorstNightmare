@@ -24,8 +24,8 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     [SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
 
-    private float m_currentV = 0;
-    private float m_currentH = 0;
+    public float m_currentV = 0;
+    public float m_currentH = 0;
 
     private readonly float m_interpolation = 10;
     private readonly float m_walkScale = 0.33f;
@@ -33,7 +33,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private readonly float m_backwardRunScale = 0.66f;
 
     private bool m_wasGrounded;
-    private Vector3 m_currentDirection = Vector3.zero;
+    public Vector3 m_currentDirection = Vector3.zero;
 
     private float m_jumpTimeStamp = 0;
     private float m_minJumpInterval = 0.25f;
