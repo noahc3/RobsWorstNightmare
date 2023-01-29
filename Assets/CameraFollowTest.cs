@@ -17,6 +17,7 @@ public class CameraFollowTest : MonoBehaviour
     void Update()
     {
 
-        transform.position = player.transform.position + new Vector3(0, 4, -5);
+        transform.position = player.transform.position + new Vector3(0, 5, -4);
+        transform.rotation = Quaternion.Euler(30, 0, 0);
     }
 }
