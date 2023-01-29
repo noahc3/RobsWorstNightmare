@@ -34,16 +34,16 @@ public class DialogueController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)){
-          if(NextText)
-          {
-            ContinueText.text = "";
-            NextSentence();
-            Source.clip = SentencesAudio[AudioIndex];
-            Source.Play();
-            NextText = false;
-          }
+      if(Input.GetKeyDown(KeyCode.Space)){
+        if(NextText)
+        {
+          ContinueText.text = "";
+          NextSentence();
+          Source.clip = SentencesAudio[AudioIndex];
+          Source.Play();
+          NextText = false;
         }
+      }
     }
 
     void NextSentence()
