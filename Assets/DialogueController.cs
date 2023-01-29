@@ -48,7 +48,7 @@ public class DialogueController : MonoBehaviour
 
     void NextSentence()
     {
-      if(SentenceIndex < Sentences.Length - 1)
+      if(SentenceIndex <= Sentences.Length - 1)
         {
           DialogueText.text = "";
           StartCoroutine(WriteSentence());
