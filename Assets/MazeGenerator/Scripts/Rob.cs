@@ -9,20 +9,25 @@ public class Rob : MonoBehaviour
 {
     public GameObject Wall = null;
     public AudioClip HitSound = null;
-    public AudioClip CoinSound = null;
+    public AudioClip oofSound = null;
+    public AudioClip EspressoSound = null;
     public AudioClip GlitchSound = null;
+
+    public AudioClip[] RobHitSounds;
+    public AudioClip[] EspressoHit;
 
     public float BoostWhenTransformingAmount = 0.1f;
     public int HeightBoostAmount = 2;
 
     private Rigidbody mRigidBody = null;
     private AudioSource mAudioSource = null;
-    private bool mFloorTouched = false;
     private int espressosCollected = 0;
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+      mRigidBody = GetComponent<Rigidbody> ();
+      mAudioSource = GetComponent<AudioSource> ();
     }
 
     // Update is called once per frame
@@ -74,39 +79,30 @@ public class Rob : MonoBehaviour
             mAudioSource.PlayOneShot(GlitchSound);
         }
 
-        if (coll.gameObject.tag.Equals("Floor"))
+        if (coll.gameObject.tag.Equals("NormalWall") || coll.gameObject.tag.Equals("Pillar"))
         {
-            mFloorTouched = true;
-            if (mAudioSource != null && HitSound != null && coll.relativeVelocity.y > .5f)
-            {
-                mAudioSource.PlayOneShot(HitSound, coll.relativeVelocity.magnitude);
-            }
+          // Debug.Log("HEYYYYYYYYYYYYYYYYYY");
+            oofSound = RobHitSounds[Random.Range(0, 4)];
+            mAudioSource.clip = oofSound;
+            mAudioSource.Play();
+            // mAudioSource.PlayOneShot(oofSound, coll.relativeVelocity.magnitude);
         }
-        else
-        {
-            if (mAudioSource != null && HitSound != null && coll.relativeVelocity.magnitude > 2f)
-            {
-                mAudioSource.PlayOneShot(HitSound, coll.relativeVelocity.magnitude);
-            }
-        }
-
     }
 
     void OnCollisionExit(Collision coll)
     {
-        if (coll.gameObject.tag.Equals("Floor"))
-        {
-            mFloorTouched = false;
-        }
+
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("EspressoCollectable"))
         {
-            if (mAudioSource != null && CoinSound != null)
+            if (mAudioSource != null)
             {
-                mAudioSource.PlayOneShot(CoinSound);
+              EspressoSound = EspressoHit[Random.Range(0, 3)];
+              mAudioSource.clip = EspressoSound;
+              mAudioSource.Play();
             }
 
             espressosCollected++;

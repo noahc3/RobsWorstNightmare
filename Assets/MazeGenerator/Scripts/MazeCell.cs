@@ -8,6 +8,7 @@ public enum Direction{
 	Left,
 	Back,
 	IsGlitch,
+	IsSpawn,
 };
 //<summary>
 //Class for representing concrete maze cell.
@@ -20,4 +21,5 @@ public class MazeCell {
 	public bool WallBack = false;
 	public bool IsGoal = false;
 	public bool IsGlitch = false;
+	public bool IsSpawn = false;
 }

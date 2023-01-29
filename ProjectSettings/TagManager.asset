@@ -8,7 +8,7 @@ TagManager:
   - Floor
   - GlitchWall
   - EspressoCollectable
-  - EspressosCollected
+  - SpawnFloor
   layers:
   - Default
   - TransparentFX
