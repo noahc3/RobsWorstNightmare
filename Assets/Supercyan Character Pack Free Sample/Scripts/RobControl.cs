@@ -111,7 +111,7 @@ public class RobControl : MonoBehaviour
         moveZ *= Time.deltaTime;
         moveX *= Time.deltaTime;
 
-        transform.Translate(-moveX, 0, -moveZ);
+        transform.Translate(moveX, 0, moveZ);
     }
 
        private void DirectUpdate()
