@@ -4,13 +4,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public enum alphaValue
-{
-  SHRINKING,
-  GROWING
-}
-
-
 public class DialogueController : MonoBehaviour
 {
   // Text 
@@ -24,17 +17,15 @@ public class DialogueController : MonoBehaviour
   public TextMeshProUGUI SkipText;
 
   // Text effects
-  public alphaValue currentAlphaValue;
-  public float CommentMinAlpha;
-  public float CommentMaxAlpha;
-  public float CommentCurrentAlpha;
+  private float TextMinAlpha;
+  private float TextMaxAlpha;
+  private float TextCurrentAlpha;
+  private bool reduceColor;
 
   // Audio 
   public AudioSource Source;
   public AudioClip[] SentencesAudio;
   private int AudioIndex = 0;
-
-
 
   // Start is called before the first frame update
   void Start()
@@ -43,10 +34,10 @@ public class DialogueController : MonoBehaviour
     Source.clip = SentencesAudio[AudioIndex];
     Source.Play();
 
-    CommentMinAlpha = 0.2f;
-    CommentMaxAlpha = 1f;
-    CommentCurrentAlpha = 1f;
-    currentAlphaValue = alphaValue.SHRINKING;
+    TextMinAlpha = 0.2f;
+    TextMaxAlpha = 1f;
+    TextCurrentAlpha = 1f;
+    reduceColor = true;
   }
 
   // Update is called once per frame
@@ -93,32 +84,32 @@ public class DialogueController : MonoBehaviour
     SentenceIndex++;
     AudioIndex++;
     NextText = true;
-    ContinueText.text = "Press Space to continue....";
+    ContinueText.text = "Press Space to continue.....";
 
   }
 
   public void AlphaComments()
   {
-    if(currentAlphaValue == alphaValue.SHRINKING)
+    if(reduceColor)
     {
-      CommentCurrentAlpha = CommentCurrentAlpha - 0.0025f;
-      SkipText.color = new Color(Color.white.r,Color.white.g, Color.white.b, CommentCurrentAlpha);
-      ContinueText.color = new Color(Color.white.r,Color.white.g, Color.white.b, CommentCurrentAlpha);
-      if(CommentCurrentAlpha <= CommentMinAlpha)
+      TextCurrentAlpha = TextCurrentAlpha - 0.0025f;
+      if(TextCurrentAlpha <= TextMinAlpha)
       {
-        currentAlphaValue = alphaValue.GROWING;
+        reduceColor = !reduceColor;
       }
     }
-    else if(currentAlphaValue == alphaValue.GROWING)
+    else
     {
-      CommentCurrentAlpha = CommentCurrentAlpha + 0.0025f;
-      SkipText.color = new Color(Color.white.r,Color.white.g, Color.white.b, CommentCurrentAlpha);
-      ContinueText.color = new Color(Color.white.r,Color.white.g, Color.white.b, CommentCurrentAlpha);
-      if(CommentCurrentAlpha >= CommentMaxAlpha)
+      TextCurrentAlpha = TextCurrentAlpha + 0.0025f;
+      if(TextCurrentAlpha >= TextMaxAlpha)
       {
-        currentAlphaValue = alphaValue.SHRINKING;
+        reduceColor = !reduceColor;
       }
     }
+
+    SkipText.color = new Color(Color.white.r,Color.white.g, Color.white.b, TextCurrentAlpha);
+    ContinueText.color = new Color(Color.white.r,Color.white.g, Color.white.b, TextCurrentAlpha);
+
   }
 
 }
