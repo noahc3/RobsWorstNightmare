@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 1e761c6cbe05e82418e8ecc830ebbe51, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.07708718, g: 0.121239245, b: 0.27292016, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -807,6 +807,7 @@ MonoBehaviour:
   oofSound: {fileID: 0}
   EspressoSound: {fileID: 0}
   GlitchSound: {fileID: 8300000, guid: 588103d53f420764aba87ecaab7aaae2, type: 3}
+  StudentSound: {fileID: 0}
   RobHitSounds:
   - {fileID: 8300000, guid: ccda320cabb17de489564050b95acc50, type: 3}
   - {fileID: 8300000, guid: 1e280eee55f4b484e821273149736143, type: 3}
@@ -816,6 +817,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 36a380db06eab3d4db9d5b406efcdf87, type: 3}
   - {fileID: 8300000, guid: a157d4dd9c5b17746ad4ebe9b991c0ee, type: 3}
   - {fileID: 8300000, guid: cf72f7e71a7d8d849962c11e55ff76a8, type: 3}
+  StudentSounds:
+  - {fileID: 8300000, guid: a2d53adcfa0bd8c4cb79584933e243ec, type: 3}
+  - {fileID: 8300000, guid: 80b230e8cc35dff4bb9b4fa6ef279a33, type: 3}
+  - {fileID: 8300000, guid: 10dbb4b39426f924599d06d29f874bdf, type: 3}
+  - {fileID: 8300000, guid: aeaed79b448238442ae41fa5fa1e9714, type: 3}
+  - {fileID: 8300000, guid: aeaed79b448238442ae41fa5fa1e9714, type: 3}
+  - {fileID: 8300000, guid: e0d6f6116c7c126479a68209d6d40c20, type: 3}
+  - {fileID: 8300000, guid: b9e7d9443bcc3b1439a5f9d2dc3eeafd, type: 3}
+  - {fileID: 8300000, guid: 22260fcf084790446a466cf925668670, type: 3}
+  - {fileID: 8300000, guid: faf6b29d55b2c9b458c7e248d18cc0d3, type: 3}
+  - {fileID: 8300000, guid: 8a3b4591910ab6349a2fc6be88d30aa9, type: 3}
+  - {fileID: 8300000, guid: 6f208657a28519141a90295cb5888bde, type: 3}
+  - {fileID: 8300000, guid: 34ae128dfda6d0e47a32662ec0b61713, type: 3}
   BoostWhenTransformingAmount: 4
   HeightBoostAmount: 2
 --- !u!82 &1908672483

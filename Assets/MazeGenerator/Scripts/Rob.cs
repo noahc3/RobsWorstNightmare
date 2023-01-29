@@ -103,6 +103,22 @@ public class Rob : MonoBehaviour
             StudentSound = StudentSounds[Random.Range(0, 12)];
             mAudioSource.clip = StudentSound;
             mAudioSource.Play();
+
+            if (espressosCollected == 1)
+            {
+                Image espresso1 =  GameObject.Find("espresso1").GetComponent<Image>();
+                var tempColor = espresso1.color;
+                tempColor.a = 0.2f;
+                espresso1.color = tempColor;
+            }
+            else if (espressosCollected == 2)
+            {
+                Image espresso1 =  GameObject.Find("espresso2").GetComponent<Image>();
+                var tempColor = espresso1.color;
+                tempColor.a = 0.2f;
+                espresso1.color = tempColor;
+            }
+            espressosCollected = espressosCollected > 0 ? espressosCollected - 1 : 0;
         }
     }
 
