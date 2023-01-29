@@ -110,4 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f7262931291f645826f044f1b634df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EnemyPrefab: {fileID: 1997953001238138, guid: b0cb0fe2d6d00e34ea50c406aeb772f5, type: 3}
+  m_EnemyPrefabs:
+  - {fileID: 1997953001238138, guid: 67c98ff9ec6f13d4e8ac0592bddd5722, type: 3}
+  - {fileID: 1997953001238138, guid: cb9f9e356949cff469f2b962e92691dc, type: 3}
+  - {fileID: 1997953001238138, guid: 8e0e7ed183c31e344acc96b468babe35, type: 3}
+  - {fileID: 1997953001238138, guid: b0cb0fe2d6d00e34ea50c406aeb772f5, type: 3}

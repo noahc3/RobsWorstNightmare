@@ -6,10 +6,11 @@ public class SpawnerFloor : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject m_EnemyPrefab = null;
+    public GameObject[] m_EnemyPrefabs = null;
     void Start()
     {
-        Instantiate(m_EnemyPrefab, transform.position, Quaternion.Euler(0, 0, 0));
+        var numb = Random.Range(0,m_EnemyPrefabs.Length);
+        Instantiate(m_EnemyPrefabs[numb], transform.position, Quaternion.Euler(0, 0, 0));
     }
 
     // Update is called once per frame
