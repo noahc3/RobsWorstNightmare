@@ -4,6 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Diagnostics;
+using TMPro;
 
 public class Rob : MonoBehaviour
 {
@@ -23,17 +25,24 @@ public class Rob : MonoBehaviour
     private AudioSource mAudioSource = null;
     private int espressosCollected = 0;
 
+    public Stopwatch timer;
+
     // Start is called before the first frame update
     void Start()
     { 
-      mRigidBody = GetComponent<Rigidbody> ();
-      mAudioSource = GetComponent<AudioSource> ();
+        mRigidBody = GetComponent<Rigidbody> ();
+        mAudioSource = GetComponent<AudioSource> ();
+
+        timer = new Stopwatch(); 
+        timer.Start();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        UnityEngine.Debug.Log(timer.Elapsed);
+        string timeSpan = timer.Elapsed.Minutes + ":" + timer.Elapsed.Seconds + "." + timer.Elapsed.Milliseconds;
+        GameObject.Find("timerText").GetComponent<TextMeshProUGUI>().text = timeSpan;
     }
 
     void GlitchWall(GameObject oldWall)
@@ -67,14 +76,14 @@ public class Rob : MonoBehaviour
         repWall.transform.parent = wall.transform.parent;
         Destroy(wall);
 
-        Debug.Log("I have glitched");
+        //Debug.Log("I have glitched");
     }
 
     void OnCollisionEnter(Collision coll)
     {
         if (coll.gameObject.tag.Equals("GlitchWall"))
         {
-            Debug.Log("Glitch wall collide");
+            //Debug.Log("Glitch wall collide");
             GlitchWall(coll.gameObject);
             mAudioSource.PlayOneShot(GlitchSound);
         }
@@ -127,8 +136,10 @@ public class Rob : MonoBehaviour
                 tempColor.a = 1f;
                 espresso1.color = tempColor;
 
+                timer.Stop();
+                
+                //find if the user made it to the scoreboard and update the string in game over scene
                 SceneManager.LoadScene(3);
-
             }
 
             Destroy(other.gameObject);
