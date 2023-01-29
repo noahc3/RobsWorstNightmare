@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -284,16 +284,16 @@ MonoBehaviour:
   DialogueText: {fileID: 694110154}
   Sentences:
   - Hello, it is I, your internet friend Robert Guderian.
-  - ' I''m being chased by students who waited till the last minute to work on their
-    assignments, and I need three shots of espresso before I can help them. '
+  - 'I''m being chased by students who waited till the last minute to work on their
+    assignment, and I need three shots of espresso before I can help them. '
   - 'You need to guide me to the espresso shots through the University, but I can''t
-    see the shots unless I''m in the same room as them. The closer I get to my goal,
-    the glitchier the world seems to be. '
+    see the shots unless I''m in the same room. The closer I get to my goal, the
+    glitchier the world seems to be. '
   - 'Something I''ve noticed is that the walls seem to be glitching and when I walk
-    into them they teleport me around the university. I don''t know where they''ll
+    into them and they teleport me around the university. I don''t know where they''ll
     get you, so be careful with how you use them. '
   - 'Sooo umm... Good Luck. '
-  DialogueSpeed: 0.05
+  DialogueSpeed: 0.035
   ContinueText: {fileID: 583023951}
   Source: {fileID: 13742981}
   SentencesAudio:
