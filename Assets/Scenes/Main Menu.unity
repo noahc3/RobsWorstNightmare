@@ -1228,7 +1228,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 150, y: 10}
-  m_SizeDelta: {x: 100, y: 170}
+  m_SizeDelta: {x: 60, y: 170}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &508552665
 MonoBehaviour:
@@ -1250,25 +1250,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score
+  m_text: '04:42.00
 
-    Score
+    05:19.67
 
-    Score
+    05:23.69
 
-    Score
+    06:46.67
 
-    Score
+    08:22.20
 
-    Score
+    08:23.77
 
-    Score
+    09:35:42
 
-    Score
+    10:02.78
 
-    Score
+    11:05.25
 
-    Score'
+    12:38:58'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2514,23 +2514,23 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Rob
 
-    Rob
+    Franklin
 
-    Rob
+    Rasit
 
-    Rob
+    Christina
 
-    Rob
+    Pazdor
 
-    Rob
+    Zapp
 
-    Rob
+    Tulsi
 
-    Rob
+    Andrea
 
-    Rob
+    Celine
 
-    Rob'
+    Carson'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2894,7 +2894,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 45, y: 190}
+  m_AnchoredPosition: {x: 30, y: 190}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1974498561
