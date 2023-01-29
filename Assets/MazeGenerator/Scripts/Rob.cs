@@ -90,7 +90,7 @@ public class Rob : MonoBehaviour
 
         if (coll.gameObject.tag.Equals("NormalWall") || coll.gameObject.tag.Equals("Pillar"))
         {
-           Debug.Log($"{RobHitSounds.Length}");
+           // Debug.Log($"{RobHitSounds.Length}");
             oofSound = RobHitSounds[Random.Range(0, 3)];
             mAudioSource.clip = oofSound;
             mAudioSource.Play();
@@ -137,8 +137,6 @@ public class Rob : MonoBehaviour
                 espresso1.color = tempColor;
 
                 timer.Stop();
-                
-                //find if the user made it to the scoreboard and update the string in game over scene
                 SceneManager.LoadScene(3);
             }
 
