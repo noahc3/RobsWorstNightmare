@@ -153,6 +153,15 @@ public class MazeSpawner : MonoBehaviour {
 			Debug.Log($"Creating new espresso at ({nextPos.x}, {nextPos.z})");
 			ActiveEspresso = Instantiate(GoalPrefab, nextPos, Quaternion.Euler(0, 0, 0)) as GameObject;
 			ActiveEspresso.transform.parent = transform;
-		}
+		} else
+        {
+			GameObject player = GameObject.FindGameObjectWithTag("Player");
+			float dist = Mathf.Abs(Vector3.Distance(player.transform.position, ActiveEspresso.transform.position));
+			float glitchIntensity = ((20 - (Mathf.Min(dist, 20))) / 20) * 0.6f;
+			Kino.AnalogGlitch glitch = Camera.main.GetComponent<Kino.AnalogGlitch>();
+			glitch.scanLineJitter = glitchIntensity * 0.66f;
+			glitch.horizontalShake = glitchIntensity * 0.3f;
+			glitch.colorDrift = glitchIntensity;
+        }
     }
 }
