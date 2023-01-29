@@ -9,6 +9,9 @@ TagManager:
   - GlitchWall
   - EspressoCollectable
   - SpawnFloor
+  - Undefined
+  - NormalWall
+  - Pillar
   layers:
   - Default
   - TransparentFX
