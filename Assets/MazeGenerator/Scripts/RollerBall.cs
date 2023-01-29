@@ -19,7 +19,7 @@ public class RollerBall : MonoBehaviour {
 	private Rigidbody mRigidBody = null;
 	private AudioSource mAudioSource = null;
 	private bool mFloorTouched = false;
-	
+	private int espressosCollected = 0;
 	
 
 	void Start () {
@@ -122,6 +122,13 @@ public class RollerBall : MonoBehaviour {
 			if(mAudioSource != null && CoinSound != null){
 				mAudioSource.PlayOneShot(CoinSound);
 			}
+
+			espressosCollected++;
+			if (espressosCollected == 3)
+			{
+				
+			}
+
 			Destroy(other.gameObject);
 		}
 	}
