@@ -12,6 +12,7 @@ TagManager:
   - Undefined
   - NormalWall
   - Pillar
+  - Student
   layers:
   - Default
   - TransparentFX

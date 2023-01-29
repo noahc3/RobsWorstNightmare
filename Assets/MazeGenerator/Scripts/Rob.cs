@@ -14,9 +14,11 @@ public class Rob : MonoBehaviour
     public AudioClip oofSound = null;
     public AudioClip EspressoSound = null;
     public AudioClip GlitchSound = null;
+    public AudioClip StudentSound = null;
 
     public AudioClip[] RobHitSounds;
     public AudioClip[] EspressoHit;
+    public AudioClip[] StudentSounds;
 
     public float BoostWhenTransformingAmount = 0.1f;
     public int HeightBoostAmount = 2;
@@ -90,11 +92,17 @@ public class Rob : MonoBehaviour
 
         if (coll.gameObject.tag.Equals("NormalWall") || coll.gameObject.tag.Equals("Pillar"))
         {
-           // Debug.Log($"{RobHitSounds.Length}");
+
             oofSound = RobHitSounds[Random.Range(0, 3)];
             mAudioSource.clip = oofSound;
             mAudioSource.Play();
             // mAudioSource.PlayOneShot(oofSound, coll.relativeVelocity.magnitude);
+        }
+        if(coll.gameObject.tag.Equals("Student"))
+        {
+            StudentSound = StudentSounds[Random.Range(0, 12)];
+            mAudioSource.clip = StudentSound;
+            mAudioSource.Play();
         }
     }
 
